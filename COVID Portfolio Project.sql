@@ -70,7 +70,7 @@ ORDER BY TotalDeathCount DESC
 
 --GLOBAL NUMBERS
 
-SELECT date, SUM(total_cases) AS GlobalTotalCases, SUM(cast(total_deaths as INT)) AS GlobalTotalDeaths, SUM(cast(total_deaths as INT))/SUM(total_cases)*100 AS GlobalDeathPercentage
+SELECT date, SUM(new_cases) AS GlobalTotalCases, SUM(cast(new_deaths as INT)) AS GlobalTotalDeaths, SUM(cast(new_deaths as INT))/SUM(total_cases)*100 AS GlobalDeathPercentage
 FROM [Portfolio Project]..CovidDeaths$
 --WHERE location LIKE "%states%'
 WHERE continent IS NOT NULL
@@ -111,7 +111,7 @@ SELECT *, (RollingPeopleVaccinated/population)*100
 FROM CTE_PopvsVac
 
 
---Using Temp Table to perform Calculation on Partition By i previous query
+--Using Temp Table to perform Calculation on Partition By in previous query
 
 DROP TABLE if exists #PercentPopulationVaccinated
 CREATE TABLE #PercentPopulationVaccinated
