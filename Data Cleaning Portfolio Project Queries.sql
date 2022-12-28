@@ -154,8 +154,9 @@ FROM [Portfolio Project].dbo.NashvilleHousing
 SELECT *
 FROM RowNumCTE
 WHERE row_num > 1
---ORDER BY PropertyAddress
 
+SELECT *
+FROM [Portfolio Project].dbo.NashvilleHousing
 -----------------------------------------------------------------
 
 -- Delete Unused Columns
@@ -164,7 +165,6 @@ SELECT *
 FROM [Portfolio Project].dbo.NashvilleHousing
 
 ALTER TABLE [Portfolio Project].dbo.NashvilleHousing
-DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress
+DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
 
-ALTER TABLE [Portfolio Project].dbo.NashvilleHousing
-DROP COLUMN SaleDate
+-----------------------------------------------------------------
